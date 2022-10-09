@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="assets/lol-logo.png" type="image/x-icon">
+  <title>Cadastro</title>
+</head>
+<body>
+  <main class="background">
+    <div class="grid-geral">
+      <a href="index.html"><img class="logo" src="assets/lol-logoBranco.png" alt="Logo do League Of Legends"></a>
+      <div class="flex">
+        <div class="iniciarSessao">
+          <h1 class="titulo">Faça seu cadastro</h1>
+          <div>
+            <p id="pAvisoNomeUsuario" class="pAvisoNomeUsuario">Seu nome de usuário deve conter mais de 6 dígitos</p>
+            <input onkeyup="preencherCadastro()" class="input" type="text" placeholder="Nome de usuário" id="inputNomeUsuario">
+          </div>
+          <div>
+            <p id="pAvisoEmail" class="pAvisoEmail">Email inválido</p>
+            <input onkeyup="preencherCadastro()" class="input" type="email" placeholder="E-mail" id="inputEmail">
+         </div>
+         <div>
+           <p id="pAvisoSenha" class="pAvisoSenha">Senhas incompátiveis</p>
+            <input onkeyup="preencherCadastro()" class="input" type="password" placeholder="Senha" id="inputSenha">
+         </div>
+         <div>
+           <p id="pAvisoConfirmarSenha" class="pAvisoConfirmarSenha">Senha incompatíveis</p>
+          <input onkeyup="preencherCadastro()" class="input" type="password" placeholder="Confirmar senha" id="inputConfirmarSenha">
+         </div>
+
+          <button onclick="validarCadastro()" class="botaoSeta" id="botaoSeta" class="hover">
+          </button>
+          <a class="aCriarConta" href="cadastro.html">Criar conta</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
+<script src="./js/cadastro.js"></script>

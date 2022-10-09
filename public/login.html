@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="assets/lol-logo.png" type="image/x-icon">
+  <title>Login</title>
+</head>
+<body>
+  <main class="background">
+    <div class="grid-geral">
+      <a href="index.html"><img class="logo" src="assets/lol-logoBranco.png" alt="Logo do League Of Legends"></a>
+      <div class="flex">
+        <div class="iniciarSessao">
+          <h1 class="titulo">Iniciar sessão</h1>
+          <p class="pAviso" id="pAviso">Seu nome de usuário ou senha podem estar incorretos ou você pode não ter se cadastrado. Confira o link para se cadastrar <a href="cadastro.html">Cadastre-se!</a></p>
+          <input onkeyup="preencherLogin()" class="input" type="text" placeholder="Nome de usuário" id="inputNomeUsuario">
+          <input onkeyup="preencherLogin()" class="input" type="password" placeholder="Senha" id="inputSenha">
+          <div class="manterLogin">
+            <input type="checkbox" id="manterLoginInput" class="manterLoginInput">
+            <label for="manterLoginLabel" class="manterLoginLabel">Manter Login</labe>
+          </div>
+          <button onclick="verificarLogin()" class="botaoSeta" id="botaoSeta">
+          </button>
+          <a class="aCriarConta" href="cadastro.html">Criar conta</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
+<script src="./js/login.js"></script>

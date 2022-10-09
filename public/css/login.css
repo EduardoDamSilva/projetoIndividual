@@ -1,0 +1,150 @@
+.background{
+  background-image: url('../assets/lol_desktop_background_2x.jpg');
+  background-size: cover;
+  height: 100vh /* 100% */;
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.logo{
+  width: 70px;
+  margin: 30px 0 ;
+}
+
+.iniciarSessao{
+  background-color: #F9F9F9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 35px 35px 25px;
+
+}
+
+.iniciarSessao .titulo{
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.iniciarSessao .input{
+  width: 300px;
+  font-weight: 700;
+  padding: 21px 0 21px 15px;
+  font-size: 1em;
+  background-color: #E7E7E7;
+  color: #434343;
+  border: 2px solid transparent;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: 0.2s;
+  height: 50px;
+  transition: 0.2s;
+}
+
+.iniciarSessao .input::placeholder{
+  font-size: 0.625em;
+  text-transform: uppercase;
+}
+
+.iniciarSessao .input:hover{
+  background-color: #D4D4D4;
+}
+
+.iniciarSessao .input:focus::placeholder{
+  font-size: 0px;
+  text-transform: none;
+}
+
+.iniciarSessao .input:focus{
+  background-color: #F9F9F9;
+}
+
+.iniciarSessao .manterLogin{
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.manterLoginInput{
+  -webkit-appearance: none;
+	background-color: #E7E7E7;
+	border: none;
+	padding: 10px;
+	display: inline-block;
+	position: relative;
+  border-radius: 5px;
+  margin-right: 5px;
+  transition: 0.2s;
+}
+
+.manterLoginInput:hover{
+  background-color: #D4D4D4;
+  cursor: pointer;
+}
+
+.manterLoginInput:checked:after{
+  content: " "; 
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+"); 
+  background-repeat: no-repeat; 
+  background-size: 10px 10px; 
+  background-position: center center; 
+  position: absolute; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  margin-left: 0px; 
+  left: 0px; 
+  top: 0px; 
+  text-align: center; 
+  background-color: transparent; 
+  font-size: 10px; 
+  height: 20px; 
+  width: 20px;
+  background-color: #00C2DF;
+}
+
+.manterLoginLabel{
+  font-size: 0.75em;
+}
+
+.botaoSeta{
+  background-image: url('../assets/seta.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #F9F9F9;
+  border: 2px solid #D9D9D9;
+  border-radius: 25px;
+  padding: 30px 30px;
+  align-self: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.hover:hover{
+  background-color: #000607;
+}
+
+.aCriarConta{
+  font-style: none;
+  font-weight: 700;
+  color: #434343;
+  text-transform: uppercase;
+  font-size: 0.625em;
+}
+
+.aCriarConta:hover{
+  color: #000;
+}
+
+.pAviso{
+  display: none;
+  color: #BE2ED1;
+  max-width: 300px;
+  font-size: 0.825em;
+  margin-bottom: 20px;
+}

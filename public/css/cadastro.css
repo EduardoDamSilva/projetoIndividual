@@ -1,0 +1,9 @@
+/* JavaScript */
+
+.pAvisoNomeUsuario, .pAvisoEmail, .pAvisoSenha, .pAvisoConfirmarSenha{
+  display: none;
+  color: #BE2ED1;
+  max-width: 300px;
+  font-size: 0.825em;
+  margin-bottom: 5px;
+}
