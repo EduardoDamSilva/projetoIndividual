@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
+@import url('./index.css');
 @import url('./global.css');
 @import url('./login.css');
 @import url('./cadastro.css');
+
 
 
 *{
