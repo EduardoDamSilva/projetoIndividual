@@ -167,8 +167,16 @@
 .campeao{
   display: flex;
   align-items: center;
-  max-width: 90%;
+  width: 90%;
   margin: 0 auto;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.campeao .grid-geral{
+  max-width: 100% !important;
+  margin: 0px;
+  padding: 0px;
 }
 
 .spanCampeao{
@@ -178,6 +186,10 @@
   transform: rotate(-180deg);
   font-size: 0.8em;
   font-weight: 700;
+}
+
+.campeao .flex ul{
+  overflow: visible;
 }
 
 .campeao .grid-geral{
@@ -200,11 +212,14 @@
 
 .campeaoTitulo{
   font-size: 5rem;
+  overflow: visible;
+
 }
 
 .campeaoTitulo span{
   font-size: 1.5rem;
 }
+
 
 .imagensCampeao{
   width: 100%;
@@ -213,17 +228,27 @@
   margin-top: -80px;
   flex-direction: column;
   align-items: center;
+  overflow: visible;
+
 }
 
-.imagemYasuo{
+.imagemAkali, .imagemYasuo, .imagemLux, .imagemJinx, .imagemThresh, .imagemLeona{
   width: 550px;
+  overflow: visible;
+  position: relative;
+  z-index: -1;
+  margin-top: -50px;
 }
 
-.textoYasuo{
-  margin-top: -30px;
+.flex{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: visible;
 }
 
-.textoYasuo h3{
+.textoCampeao h3{
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 5px;
@@ -233,7 +258,7 @@
   margin-top: 30px;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 40px;
 }
 
 .funcoes li p{
@@ -243,11 +268,42 @@
   color: #bbb;
 }
 
-.ativo svg{
-  fill: #CCA150 !important;
+
+.ativoFuncoes svg{
+  animation-name: changeColor;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
-.ativo p{
-  color: #CCA150 !important;
+.ativoFuncoes p{
+  animation-name: changeColor !important;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
+.ativo{
+  display: block !important;
+  animation-name: opacity;
+  animation-duration: 1s;
+
+}
+
+@keyframes opacity {
+  from {opacity: 0%;}
+  to {opacity: 100%;}
+}
+
+@keyframes changeColor {
+  from{
+    color: #bbb;
+    fill: #bbb;
+  }
+  to{
+    color: #CCA150;
+    fill: #CCA150;
+  }
+}
+
+.campeao-js{
+  display: none;
+}
