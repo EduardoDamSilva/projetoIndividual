@@ -307,3 +307,112 @@
 .campeao-js{
   display: none;
 }
+
+/* Como jogar */
+
+.backgroundComoJogar{
+  background-color: #050D12;
+}
+
+.comoJogar .grid-geral{
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+  padding-bottom: 100px;
+}
+
+.imgMapalol{
+  position: relative;
+  top: 100px;
+  z-index: 0;
+  min-width: 800px;
+  right: 80px;
+}
+
+.textoComoJogar{
+  display: flex;
+  right: 200px;
+  flex-flow: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  max-width: 500px;
+  min-width: 500px;
+}
+
+.textoComoJogar p{
+  
+  
+  text-align: justify;
+}
+
+.comoJogarTitulo, .comoJogarTitulo span{
+  font-family: 'Noto Serif Telugu';
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 70px;
+  overflow: hidden;
+  color: white;
+}
+
+.comoJogarTitulo{
+  font-size: 5rem;
+  overflow: visible;
+}
+
+.comoJogarTitulo span{
+  font-size: 1.5rem;
+}
+
+/* Minha História */
+
+.backgroundMinhaHistoria{
+  background: linear-gradient(180deg, #050D12 0%, #000000 58.85%);
+  overflow: hidden;
+}
+
+.minhaHistoria{
+  padding-top: 100px;
+}
+
+.minhaHistoriaConteudo{
+  display: flex;
+  margin: 60px 0;
+  align-items: center;
+}
+
+.minhaHistoriaTitulo{
+  font-family: 'Noto Serif Telugu';
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 5rem;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+.minhaHistoriaTexto{
+  color: white;
+  
+  max-width: 600px;
+}
+
+.minhaHistoriaTexto h1{
+  font-family: 'Noto Serif Telugu';
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  overflow: hidden;
+  color: white;
+}
+
+.imgRanks{
+  width: 30%;
+  margin: 0 auto;
+}
