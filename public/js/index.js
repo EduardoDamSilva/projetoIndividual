@@ -1,29 +1,25 @@
-var incremento2 = 0
+var incremento = 0
 function ativarFuncao(){
   var campeaoLi = document.querySelectorAll(".campeao-js")
-  var campeaoLiArray = Array.from(campeaoLi)
   var funcoesLi = document.querySelectorAll(".funcoes-js")
-  var funcoesLiArray = Array.from(funcoesLi)
-  var incrementoFuncoes = 0
-  var incrementoCampeoes = 0
 
-  while(incrementoCampeoes < campeaoLiArray.length){
-    campeaoLiArray[incrementoCampeoes].classList.remove('ativo')
-    incrementoCampeoes++
+  for(var incrementoCampeoes = 0; incrementoCampeoes < campeaoLi.length; incrementoCampeoes++){
+    campeaoLi[incrementoCampeoes].classList.remove('ativo')
   }
 
-  while(incrementoFuncoes < funcoesLiArray.length){
-    funcoesLiArray[incrementoFuncoes].classList.remove('ativoFuncoes')
-    incrementoFuncoes++
+  for(var incrementoFuncoes = 0; incrementoFuncoes < funcoesLi.length; incrementoFuncoes++){
+    funcoesLi[incrementoFuncoes].classList.remove('ativoFuncoes')
   }
-  console.log(campeaoLiArray)
-  campeaoLiArray[incremento2].classList.toggle('ativo')
-  funcoesLiArray[incremento2].classList.toggle('ativoFuncoes')
-  incremento2++
+  
+  campeaoLi[incremento].classList.toggle('ativo')
+  funcoesLi[incremento].classList.toggle('ativoFuncoes')
+  incremento++
 
-  if(incremento2 >= campeaoLiArray.length){
-    incremento2 = 0
+  if(incremento >= campeaoLi.length){
+    incremento = 0
   }
 }
 ativarFuncao()
 setInterval(ativarFuncao, 3000)
+
+
