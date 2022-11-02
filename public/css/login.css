@@ -4,6 +4,7 @@
   height: 100vh /* 100% */;
 }
 
+
 .flex{
   display: flex;
   justify-content: center;
@@ -29,6 +30,10 @@
   font-size: 1.5em;
   font-weight: 700;
   margin-bottom: 50px;
+  color: #000;
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  text-transform: none;
 }
 
 .iniciarSessao .input{
