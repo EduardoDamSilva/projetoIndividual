@@ -1,3 +1,24 @@
+/* Estilos Gerais */
+@font-face {
+  font-family: 'BigNoodle';
+  src:  url('../assets/font/big_noodle_titling_oblique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.titulo{
+  font-family: 'Noto Serif Telugu';
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 5rem;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+/* Header */
+
 .backgroundHeader{
   background-color: black;
 }
@@ -370,7 +391,7 @@
 
 /* Minha História */
 
-.backgroundMinhaHistoria{
+.backgroundPreto{
   background: linear-gradient(180deg, #050D12 0%, #000000 58.85%);
   overflow: hidden;
 }
@@ -385,7 +406,7 @@
   align-items: center;
 }
 
-.minhaHistoriaTitulo{
+.titulo{
   font-family: 'Noto Serif Telugu';
   font-weight: 700;
   font-style: italic;
@@ -398,7 +419,6 @@
 
 .minhaHistoriaTexto{
   color: white;
-  
   max-width: 600px;
 }
 
@@ -415,4 +435,141 @@
 .imgRanks{
   width: 30%;
   margin: 0 auto;
+}
+
+/* Licoes */
+.licoes{
+  padding: 50px 0;
+  
+}
+
+.licoes .titulo{
+  line-height: 120px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.backgroundPretoLicoes{
+  background: black;
+}
+
+
+.licoesConteudo{
+  display: flex;
+  color: white;
+  flex-wrap: wrap;
+  gap: 7%;
+  
+}
+
+.subtitulo{
+  font-size: 1.5rem;
+  font-family: 'Noto Serif Telugu';
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 35px;
+  color: white;
+
+}
+
+.licoesConteudoTexto{
+  max-width: 45%;
+  margin-bottom: 50px;
+}
+
+/* Meu canal */
+
+.canal{
+  padding-bottom: 150px;
+}
+
+.backgroundAzul{
+  background: linear-gradient(180deg, #000000 0.1%, #002338 15.92%);
+}
+
+
+.tituloCanal{
+  font-family: 'BigNoodle';
+  font-weight: normal;
+  color: white;
+  font-size: 8rem;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 80px;
+}
+
+.subtituloCanal{
+  font-family: 'BigNoodle';
+  font-size: 2.25rem;
+}
+
+.canalConteudo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5%;
+  color: white;
+}
+
+.canalConteudoTexto{
+  width: 45%;
+  color: white;
+}
+
+.canalConteudoTexto a{
+  display: inline-block;
+  font-family: 'BigNoodle';
+  font-size: 2rem;
+  background-color: #0BC6E3;
+  text-decoration: none;
+  color: white;
+  margin-top: 40px;
+  padding: 15px 42px;
+  transition: 0.5s;
+}
+
+.canalConteudoTexto a:hover{
+  color: black;
+  box-shadow: 5px 5px 5px #000000;
+}
+
+
+/* Footer */
+
+.footerConteudo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerConteudo p {
+  color: #A6A6A6;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.footerNav{
+  display: flex;
+  margin-top: 20px;
+}
+
+.footerNav .linkPaginas:hover{
+  background-color: #000000;
+  color: #d1d1d1;
+}
+
+.footerNav a{
+  text-decoration: none;
+  color: #A6A6A6;
+}
+
+.footerConteudoRedes{
+  display: flex;
+  gap: 15px;
+}
+
+.footerConteudoRedes{
+  cursor: pointer;
 }
