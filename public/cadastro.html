@@ -32,14 +32,121 @@
           <input onkeyup="preencherCadastro()" class="input" type="password" placeholder="Confirmar senha" id="inputConfirmarSenha">
          </div>
 
-          <button onclick="validarCadastro()" class="botaoSeta" id="botaoSeta" class="hover">
+          <button onclick="cadastrar()" class="botaoSeta" id="botaoSeta" class="hover">
           </button>
+          <div id="div_aguardar" class="loading-div">
+            <img src="./assets/circle-loading.gif" id="loading-gif">
+          </div>
+
           <a class="aCriarConta" href="login.html">Iniciar sessão</a>
         </div>
       </div>
     </div>
+    
+    <div class="card_erro" id="cardErro">
+      <span id="mensagem_erro"></span>
+  </div>
 
   </main>
 </body>
 </html>
 <script src="./js/cadastro.js"></script>
+<script src="./js/funcoes.js"></script>
+<script>
+   function cadastrar() {
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = inputNomeUsuario.value;
+        var emailVar = inputEmail.value;
+        var senhaVar = inputSenha.value;
+        var confirmacaoSenhaVar = inputConfirmarSenha.value;
+        var cadastroIncompleto = false;
+        console.log(nomeVar, emailVar, senhaVar, confirmacaoSenhaVar)
+
+
+        if(nomeVar.length < 6){
+          exibirAviso(pAvisoNomeUsuario, inputNomeUsuario, "Seu nome de usuário deve conter mais de 6 dígitos");
+
+        }
+
+        if (emailVar == ""){
+          exibirAviso(pAvisoEmail, inputEmail, "Insira um email");
+        }
+
+        if(emailVar.indexOf("@") < 3 || emailVar.indexOf(" ") >= 0 || !emailVar.indexOf(".")){
+          exibirAviso(pAvisoEmail, inputEmail, "Email inválido");
+        }
+
+        if(senhaVar.length < 8){
+          exibirAviso(pAvisoSenha, inputSenha, "Senha muito curta");
+        }
+  
+        if(senhaVar != confirmacaoSenhaVar){
+          exibirAviso(pAvisoConfirmarSenha, inputConfirmarSenha, "Senhas incompátiveis");
+        }
+
+        function exibirAviso(paragrafoTag, input, mensagem){
+          paragrafoTag.innerHTML = mensagem;
+          paragrafoTag.style.display = "block";
+          input.style.backgroundColor = "#F3E3F4";
+          input.style.border = "2px solid #EEBBF1";
+          
+          cadastroIncompleto = true;
+        }
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha os campos";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+</script>

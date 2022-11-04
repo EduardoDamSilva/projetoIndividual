@@ -1,2 +1,0 @@
-# projetoIndividual
-Projeto Individual SPTech

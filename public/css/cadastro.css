@@ -7,3 +7,7 @@
   font-size: 0.825em;
   margin-bottom: 5px;
 }
+
+.loading-div{
+  display: none;
+}
