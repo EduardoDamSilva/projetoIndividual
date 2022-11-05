@@ -8,6 +8,12 @@
   margin-bottom: 5px;
 }
 
+/* JavaScript */
+
+
 .loading-div{
   display: none;
+  margin: 0 auto;
+  padding: 35px 0;
+  width: 50px;
 }

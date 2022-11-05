@@ -146,6 +146,33 @@
   height: 78vh;
   top: -15px;
   border: 1px solid #7c7c7c;
+  /* clip-path: polygon(
+     0 0%,
+      0% 0,
+    100% 100,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%
+  ) */
+}
+
+
+
+.divVideo::after{
+  content: "";
+  position:absolute;
+  left: 46px;
+  top: -35px;
+  width: 40px;
+  height:40px;
+  background: ;
+  transform:rotate(45deg);
+  background-color: unset;
+  border-right: 1px solid #7c7c7c;
+  
 }
 
 

@@ -153,3 +153,12 @@
   font-size: 0.825em;
   margin-bottom: 20px;
 }
+
+/* JS */
+
+.loading-div{
+  display: block;
+  margin: 0 auto;
+  padding: 35px 0;
+  width: 50px;
+}
