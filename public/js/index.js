@@ -30,8 +30,5 @@ function paralax(event){
 
   img.style.transition = "transform"
   img.style.right = event.screenX * 0.025 + "px"
- 
-
-
 }
 
