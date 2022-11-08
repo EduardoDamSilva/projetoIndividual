@@ -54,7 +54,7 @@
         </div>
         <div class="campeoes">
           <img src="assets/campeoes/amumu.jpg" alt="Aatrox">
-          <span class="campeao-legenda">Aatrox</span>
+          <span class="campeao-legenda">Amumu</span>
         </div>
         <div class="campeoes">
           <img src="assets/campeoes/anivia.jpg" alt="Aatrox">
@@ -706,4 +706,39 @@
   </footer>
 </body>
 </html>
-<script src="js/favorito.js"></script>
+<script>
+  const divCampeao = document.querySelectorAll(".campeoes")
+  for(var i = 0; i < divCampeao.length; i++){
+    divCampeao[i].addEventListener("click", votar)
+  }
+
+  function votar(evento){
+    const divQueClicou = evento.currentTarget;
+    const nomeDoPersonagem = divQueClicou.lastElementChild.innerHTML;
+    console.log(nomeDoPersonagem)
+
+    fetch(`/votacao/votar`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        nomeCampeao: nomeDoPersonagem
+      })
+    }).then(function (resposta) {
+              console.log("resposta: ", resposta);
+          }).catch(function (resposta) {
+              console.log(`#ERRO: ${resposta}`);
+
+          });
+    
+    
+    /* .then(function (resposta){
+      console.log("resposta: " ,resposta);
+    }).catch(function (resposta) {
+              console.log(`#ERRO: ${resposta}`);
+          }); */
+
+  }
+
+</script>
