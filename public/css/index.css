@@ -146,33 +146,12 @@
   height: 78vh;
   top: -15px;
   border: 1px solid #7c7c7c;
-  /* clip-path: polygon(
-     0 0%,
-      0% 0,
-    100% 100,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%
-  ) */
+
 }
 
 
 
-.divVideo::after{
-  content: "";
-  position:absolute;
-  left: 46px;
-  top: -35px;
-  width: 40px;
-  height:40px;
-  transform:rotate(45deg);
-  background-color: unset;
-  border-right: 1px solid #7c7c7c;
-  
-}
+
 
 
 .divLeagueOfLegends{
@@ -510,6 +489,7 @@
   padding-bottom: 150px;
 }
 
+
 .backgroundAzul{
   background: linear-gradient(180deg, #000000 0.1%, #002338 15.92%);
 }
@@ -523,6 +503,8 @@
   text-align: center;
   margin-bottom: 50px;
   margin-top: 80px;
+  position: relative;
+  z-index: 2;
 }
 
 .subtituloCanal{
@@ -537,6 +519,8 @@
   flex-wrap: wrap;
   gap: 5%;
   color: white;
+  position: relative;
+  z-index: 2;
 }
 
 .canalConteudoTexto{
