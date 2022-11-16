@@ -26,10 +26,12 @@
   <main>
     <h1 class="comentarioTitulo">Comentário</h1>
     <p class="comentarioParagrafo">Adicione um comentário sobre o que você achou do site.</p>
-    <div class="grid-geral" id="divComentarios">
-      <textarea class="comentario" name="" id="" cols="30" rows="10"></textarea>
-      <button class="addComentario">Adicionar Comentário</button>
-      <button class="addComentarioPreto mostrarComentarios">Mostrar Comentários anteriores</button>
+    <div class="grid-geral">
+      <textarea onkeyup="adicionarCor()" class="comentario" name="" id="textArea" cols="30" rows="10"></textarea>
+      <button class="addComentario" onclick="comentar()" id="botaoComentario">Adicionar Comentário</button>
+      <div id="divComentarios">
+
+      </div>
     </div>
 
     
@@ -61,13 +63,11 @@
 <script>
   nomeUsuario.innerHTML = sessionStorage.getItem("NOME_USUARIO") + '<img src="assets/setinha-para-baixo.png" alt="">'
 
-  const textArea = document.querySelector("textarea")
-  const botaoComentario = document.querySelector(".addComentario")
-  textArea.addEventListener("keyup", adicionarCor)
-  botaoComentario.addEventListener("click", comentar)
+  
 
 
   function adicionarCor(){
+    console.log("adjwidj")
     if(textArea.value == ""){
       botaoComentario.classList.remove("addComentarioAtivo")
     } else {
@@ -77,7 +77,8 @@
 
 
     function comentar(){
-      if(sessionStorage.getItem("FK_COMENTARIO") == null){
+      console.log(sessionStorage.getItem("FK_COMENTARIO"))
+      if(sessionStorage.getItem("FK_COMENTARIO") == 'null'){
         fetch("/usuarios/addComentario", {
           method: "POST",
           headers: {
@@ -126,15 +127,14 @@
     })
   }
 
-  const btnMostrarComentarios = document.querySelector(".mostrarComentarios")
-  btnMostrarComentarios.addEventListener("click", mostrarComentarios)
-
   function mostrarComentarios(){
     fetch("/usuarios/mostrarComentarios").then(
       function (resposta){
         if(resposta.ok){
           resposta.json().then(function (response){
             var respostaJSON = JSON.parse(JSON.stringify(response))
+            textArea.value = ""
+            divComentarios.innerHTML = ""
             for(var i = 0; i < respostaJSON.length; i++){
               divComentarios.innerHTML += 
               `
@@ -144,9 +144,12 @@
         `
             }
           })
+        }else {
+          console.log("ERRO")
         }
       }
     )
   }
+  mostrarComentarios()
 
 </script>

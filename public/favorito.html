@@ -17,6 +17,9 @@
           <a href="ranking.html"><li class="linkPaginas">Ranking</li></a>
           <a href="#"><li class="linkPaginas">Favorito</li></a>
           <a href="comentarios.html"><li class="linkPaginas">Comentários</li></a>
+          <select name="" id="">
+            <option value="">SAir</option>
+          </select>
           <a href="#"><li id="nomeUsuario" class="nomeUsuario">Blade1 <img src="assets/setinha-para-baixo.png" alt=""></li></a>
         </ul>
       </nav>
@@ -69,45 +72,45 @@
     divCampeao[i].addEventListener("click", votar)
   }
 
-  function votar(evento){
-    if(sessionStorage.getItem("FK_CAMPEAO")){
-      const divQueClicou = evento.currentTarget;
-      const idCampeao = divQueClicou.lastElementChild.innerHTML;
-      const idUsuario = sessionStorage.getItem("ID_USUARIO");
-    
-    fetch("/usuarios/votar", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        idCampeao: idCampeao,
-        idUsuario: idUsuario
-      })
-    }).then(function (resposta) {
-              console.log("resposta: ", resposta);
+
+    function votar(evento){
+      if(sessionStorage.getItem("FK_CAMPEAO") == 'null'){
+        const divQueClicou = evento.currentTarget;
+        const idCampeao = divQueClicou.lastElementChild.innerHTML;
+        const idUsuario = sessionStorage.getItem("ID_USUARIO");
+        
+        fetch("/usuarios/votar", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            idCampeao: idCampeao,
+            idUsuario: idUsuario
+          })
+        }).then(function (resposta) {
+          console.log("resposta: ", resposta);
 
               if (resposta.ok) {
-                  setTimeout(() => {
-                      window.location = "ranking.html";
-                  }, "500")
+                setTimeout(() => {
+                  window.location = "ranking.html";
+                }, "500")
                   
                   limparFormulario();
                   finalizarAguardar();
-              } else {
+                } else {
                   throw ("Houve um erro no .then");
-              }
-          }).catch(function (resposta) {
+                }
+              }).catch(function (resposta) {
               console.log(`#ERRO: ${resposta}`);
-
-          });
-    } else {
-      alert("Você já votou, e você só pode votar mais vez!")
-    }
-    
-  }  
-
-
+              
+            });
+          } else {
+            alert("Você já votou, e você só pode votar mais vez!")
+          }
+          
+        }  
+        
   
 
 </script>

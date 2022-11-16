@@ -24,8 +24,9 @@ idComentario int auto_increment primary key,
 comentario text
 );
 
+select * from comentario;
 
-insert into votacao values 
+insert into votacao(nomeCampeao, votos) values 
 	("Aatrox", 0),
 	("Ahri", 0),
 	("Akali", 0),
@@ -144,6 +145,7 @@ insert into votacao values
 	("Sion", 0),
 	("Sivir", 0),
 	("Skarner", 0),
+    ("Sona", 0),
 	("Soraka", 0),
 	("Swain", 0),
 	("Sylas", 0),
