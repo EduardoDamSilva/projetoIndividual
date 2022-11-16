@@ -17,10 +17,11 @@
           <a href="ranking.html"><li class="linkPaginas">Ranking</li></a>
           <a href="#"><li class="linkPaginas">Favorito</li></a>
           <a href="comentarios.html"><li class="linkPaginas">Comentários</li></a>
-          <select name="" id="">
-            <option value="">SAir</option>
-          </select>
-          <a href="#"><li id="nomeUsuario" class="nomeUsuario">Blade1 <img src="assets/setinha-para-baixo.png" alt=""></li></a>
+          <li id="nomeUsuario" onclick="mostrarModal()" class="nomeUsuario">Blade1 <img src="assets/setinha-para-baixo.png" alt=""></li>
+          <div onclick="esconderModal()" id="nomeUsuario2" class="nomeUsuario2" style="display: none;">
+            <div>Blade1 <img src="assets/setinha-para-baixo.png" alt=""></div>
+            <div onclick="sair()" class="sair">Sair</div>
+          </div>
         </ul>
       </nav>
     </div>
@@ -67,6 +68,21 @@
 
   nomeUsuario.innerHTML = sessionStorage.getItem("NOME_USUARIO") + '<img src="assets/setinha-para-baixo.png" alt="">'
 
+  nomeUsuario2.innerHTML = '<div>' + sessionStorage.getItem("NOME_USUARIO") + '<img src="assets/setinha-para-baixo.png" alt=""> </div>' + '<div onclick="sair()" class="sair"><b>Sair</b></div>'
+
+  function mostrarModal(){
+      nomeUsuario2.style.display = "flex"
+  }
+
+  function esconderModal(){
+    nomeUsuario2.style.display = "none"
+  }
+
+  function sair(){
+    console.log("daowjdo")
+    location = "index.html"
+  }
+
   const divCampeao = document.querySelectorAll(".campeoes")
   for(var i = 0; i < divCampeao.length; i++){
     divCampeao[i].addEventListener("click", votar)
@@ -106,7 +122,7 @@
               
             });
           } else {
-            alert("Você já votou, e você só pode votar mais vez!")
+            alert("Você já votou, e você só pode uma vez!")
           }
           
         }  
