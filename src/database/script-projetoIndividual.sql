@@ -8,13 +8,20 @@ nome varchar(45),
 email varchar(100),
 senha varchar(45),
 fkCampeao int,
-foreign key (nomeCampeao) references votacao(nomeCampeao)
+fkComentario int,
+foreign key (fkCampeao) references votacao(idCampeao),
+foreign key (fkComentario) references comentario(idComentario)
 );
 
 create table votacao(
-nomeCampeao varchar(45) primary key,
-votos int,
-fkCadastro int
+idCampeao int auto_increment primary key,
+nomeCampeao varchar(45),
+votos int
+);
+
+create table comentario(
+idComentario int auto_increment primary key,
+comentario text
 );
 
 
@@ -180,4 +187,3 @@ insert into votacao values
 	("Zilean", 0),
 	("Zoe", 0),
 	("Zyra", 0);
-	

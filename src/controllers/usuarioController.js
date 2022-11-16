@@ -94,9 +94,113 @@ function cadastrar(req, res) {
     }
 }
 
+/* Minhas funções */
+function votar(req, res){
+    var idCampeao = req.body.idCampeao;
+    var idUsuario = req.body.idUsuario
+
+    usuarioModel.votar(idCampeao, idUsuario)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function selecionarTop10(req, res){
+
+    usuarioModel.selecionarTop10()
+        .then(
+            function (resultado) {
+                console.log(res.json(resultado));
+                console.log(resultado)
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function addComentario(req, res){
+    var textoComentario = req.body.comentario
+
+
+    usuarioModel.addComentario(textoComentario)
+
+    .then(
+        function (resultado) {
+            res.json(resultado);
+        }
+    )
+    .catch(
+        function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+
+}
+
+function atualizarDados(req, res){
+    var idUsuario = req.body.idUsuario
+
+
+    usuarioModel.atualizarDados(idUsuario)
+
+    .then(
+        function (resultado) {
+            res.json(resultado);
+        }
+    )
+    .catch(
+        function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+
+}
+
+function mostrarComentarios(req, res){
+    usuarioModel.mostrarComentarios()
+        .then(
+            function (resultado) {
+                console.log(res.json(resultado));
+                console.log(resultado)
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    votar,
+    selecionarTop10,
+    addComentario,
+    atualizarDados,
+    mostrarComentarios
 }

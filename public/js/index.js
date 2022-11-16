@@ -26,7 +26,6 @@ const sectionComoJogar = document.querySelectorAll(".comoJogar")
 addEventListener("mousemove", paralax)
 function paralax(event){
   const img = document.querySelector('.imgMapalol')
-  console.log(event)
 
   img.style.transition = "transform"
   img.style.right = event.screenX * 0.025 + "px"

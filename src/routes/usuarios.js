@@ -20,4 +20,26 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+/* Votacao */
+router.put("/votar", function(req, res){
+    usuarioController.votar(req, res);
+  })
+
+router.get("/selecionarTop10", function(req, res){
+    usuarioController.selecionarTop10(req, res);
+})
+
+router.post("/addComentario", function(req, res){
+    usuarioController.addComentario(req, res);
+})
+
+router.get("/mostrarComentarios", function(req, res){
+    usuarioController.mostrarComentarios(req, res);
+})
+
+router.put("/atualizarDados", function(req, res){
+    usuarioController.atualizarDados(req, res);
+})
+
+
 module.exports = router;

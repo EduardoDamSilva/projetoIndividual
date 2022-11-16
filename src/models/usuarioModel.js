@@ -31,8 +31,62 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucao);
 }
 
+/* Votação */
+function votar(idCampeao, idUsuario){
+    var instrucao = `
+    UPDATE votacao set votos = (votos + 1) where idCampeao = ${idCampeao};
+    `;
+  
+    votarIntrução2(idCampeao, idUsuario)
+    return database.executar(instrucao)
+  }
+
+function votarIntrução2(idCampeao, idUsuario){
+    var instrucao = `
+    UPDATE cadastro set fkCampeao = ${idCampeao} where idCadastro = ${idUsuario};
+    `;
+
+    return database.executar(instrucao)
+}
+
+function selecionarTop10(){
+    var instrucao = `SELECT * FROM votacao ORDER BY votos desc limit 10;` 
+
+    return database.executar(instrucao)
+}
+
+function addComentario(textoComentario){
+    var instrucao = `INSERT INTO comentario(comentario) values
+    ("${textoComentario}");
+   ` 
+
+
+    return database.executar(instrucao)
+}
+/* Atualiza a fk do comentário */
+function atualizarDados(idUsuario){
+    var instrucao = `
+    UPDATE cadastro SET fkComentario = ${idUsuario} WHERE idCadastro = ${idUsuario};
+   ` 
+   return database.executar(instrucao)
+}
+
+function mostrarComentarios(){
+    var instrucao = `SELECT * FROM comentario JOIN cadastro WHERE comentario.idComentario = cadastro.fkComentario;`
+
+    return database.executar(instrucao)
+}
+
+
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
+    votar,
+    selecionarTop10,
+    addComentario,
+    atualizarDados,
+    mostrarComentarios
 };

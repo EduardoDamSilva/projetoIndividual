@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Comentários</title>
+</head>
+<body>
+  <header class="header backgroundHeader">
+    <div class="grid-geral">
+      <a href="index.html"><img class="logoHeader" src="assets/lol-logo.png" alt="Logo league of legends"></a>
+      <nav class="navegacao">
+        <ul>
+          <a href="ranking.html"><li class="linkPaginas">Ranking</li></a>
+          <a href="./favorito.html"><li class="linkPaginas">Favorito</li></a>
+          <a href="comentarios.html"><li class="linkPaginas">Comentários</li></a>
+          <a href="#"><li id="nomeUsuario" class="nomeUsuario">Blade1 <img src="assets/setinha-para-baixo.png" alt=""></li></a>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="comentarioTitulo">Comentário</h1>
+    <p class="comentarioParagrafo">Adicione um comentário sobre o que você achou do site.</p>
+    <div class="grid-geral" id="divComentarios">
+      <textarea class="comentario" name="" id="" cols="30" rows="10"></textarea>
+      <button class="addComentario">Adicionar Comentário</button>
+      <button class="addComentarioPreto mostrarComentarios">Mostrar Comentários anteriores</button>
+    </div>
+
+    
+  </main>
+
+  <footer class="backgroundPretoLicoes">
+    <div class="grid-geral">
+      <div class="footerConteudo">
+          <a href="#"><img class="logoHeader" src="assets/lol-logo.png" alt=""></a>
+        <div>
+          <ul class="footerNav">
+            <a href="#campeao"><li class="linkPaginas">Campeão</li></a>
+            <a href="#jogo"><li class="linkPaginas">Jogo</li></a>
+            <a href="#historia"><li class="linkPaginas">História</li></a>
+            <a href="#licoes"><li class="linkPaginas">Lições</li></a>
+            <a href="#canal"><li class="linkPaginas">Canal</li></a>
+          </ul>
+          <p>© Todos os direitos são reservados.</p>
+        </div>
+        <div class="footerConteudoRedes">
+          <img src="assets/twitter.png" alt="">
+          <img src="assets/instagram.png" alt="">
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+<script>
+  nomeUsuario.innerHTML = sessionStorage.getItem("NOME_USUARIO") + '<img src="assets/setinha-para-baixo.png" alt="">'
+
+  const textArea = document.querySelector("textarea")
+  const botaoComentario = document.querySelector(".addComentario")
+  textArea.addEventListener("keyup", adicionarCor)
+  botaoComentario.addEventListener("click", comentar)
+
+
+  function adicionarCor(){
+    if(textArea.value == ""){
+      botaoComentario.classList.remove("addComentarioAtivo")
+    } else {
+      botaoComentario.classList.add("addComentarioAtivo")
+    }
+  }
+
+
+    function comentar(){
+      if(sessionStorage.getItem("FK_COMENTARIO") == null){
+        fetch("/usuarios/addComentario", {
+          method: "POST",
+          headers: {
+            "Content-Type" : "application/json"
+          },
+          body: JSON.stringify({
+            comentario: textArea.value
+          })
+        }).then(function (resposta){
+            if(resposta.ok){
+              console.log("Comentário feito com sucesso!")
+              atualizarDados()
+            } else {
+              console.log("Erro no then!")
+            }
+          }).catch(function (resposta){
+            console.log(`#ERRO: ${resposta}`);
+          })
+      } else {
+        alert("Você já realizou um comentário")
+      }
+    }
+
+  
+
+  function atualizarDados(){
+    const idUsuario = sessionStorage.getItem("ID_USUARIO");
+
+    fetch("/usuarios/atualizarDados", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        idUsuario: idUsuario
+      })
+    }).then(function(resposta){
+        if(resposta.ok){
+          console.log("Dados atualizados")
+          mostrarComentarios()
+        }else{
+          console.log("Erro ao atualizar dados")
+        }
+    }).catch(function (resposta){
+        console.log(`#ERRO: ${resposta}`);
+    })
+  }
+
+  const btnMostrarComentarios = document.querySelector(".mostrarComentarios")
+  btnMostrarComentarios.addEventListener("click", mostrarComentarios)
+
+  function mostrarComentarios(){
+    fetch("/usuarios/mostrarComentarios").then(
+      function (resposta){
+        if(resposta.ok){
+          resposta.json().then(function (response){
+            var respostaJSON = JSON.parse(JSON.stringify(response))
+            for(var i = 0; i < respostaJSON.length; i++){
+              divComentarios.innerHTML += 
+              `
+              <div class="comentarioFeito">
+                <b>${respostaJSON[i].nome}:</b> ${respostaJSON[i].comentario}
+              </div>
+        `
+            }
+          })
+        }
+      }
+    )
+  }
+
+</script>

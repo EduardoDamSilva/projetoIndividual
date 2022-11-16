@@ -18,7 +18,7 @@ function votar(req, res){
         );
 }
 
-/* function listar5MaisVotados(req, res){
+/* function listar10MaisVotados(req, res){
   votacaoModel.listar()
         .then(function (resultado) {
             if (resultado.length > 0) {

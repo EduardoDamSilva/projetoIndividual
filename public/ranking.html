@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-  <title>Favorito</title>
+  <title>Ranking</title>
 </head>
 <body>
   <header class="header backgroundHeader">
@@ -14,8 +14,8 @@
       <a href="index.html"><img class="logoHeader" src="assets/lol-logo.png" alt="Logo league of legends"></a>
       <nav class="navegacao">
         <ul>
-          <a href="ranking.html"><li class="linkPaginas">Ranking</li></a>
-          <a href="#"><li class="linkPaginas">Favorito</li></a>
+          <a href="#"><li class="linkPaginas">Ranking</li></a>
+          <a href="favorito.html"><li class="linkPaginas">Favorito</li></a>
           <a href="comentarios.html"><li class="linkPaginas">Comentários</li></a>
           <a href="#"><li id="nomeUsuario" class="nomeUsuario">Blade1 <img src="assets/setinha-para-baixo.png" alt=""></li></a>
         </ul>
@@ -24,16 +24,14 @@
   </header>
 
   <main>
+    <h1 class="comentarioTitulo">Ranking</h1>
+    <p class="comentarioParagrafo">Ranking dos campeões mais queridos do LOL.</p>
     <div class="grid-geral">
-      <h1 class="favoritoTitulo"><span>Escolha seu</span><br> Favorito</h1>
-      <p class="favoritoParagrafo">Escolha seu campeão favorito, para votar nele!</p>
-
-      <div>
-        <input id="inputPesquisa" class="pesquisa" placeholder="BUSCAR CAMPEAO" type="text">
+      <div class="rankings" id="rankings">
       </div>
-
-      <div class="todosCampeoes">
-      </div>
+    </div>
+    
+    </div>
   </main>
 
   <footer class="backgroundPretoLicoes">
@@ -59,55 +57,39 @@
   </footer>
 </body>
 </html>
-<script src="js/favorito.js"></script>
-<script>
 
+<script>
   nomeUsuario.innerHTML = sessionStorage.getItem("NOME_USUARIO") + '<img src="assets/setinha-para-baixo.png" alt="">'
 
-  const divCampeao = document.querySelectorAll(".campeoes")
-  for(var i = 0; i < divCampeao.length; i++){
-    divCampeao[i].addEventListener("click", votar)
+  function selecionarTop10(){
+    fetch("/usuarios/selecionarTop10").then(
+      function (resposta){
+        if(resposta.ok){
+          resposta.json().then(function (response){
+            var respostaJSON = JSON.parse(JSON.stringify(response))
+            for(var i = 0; i < response.length; i++){
+              rankings.innerHTML += 
+              `
+              <div class="ranking">
+                <div class="ranking-imgs">
+                  <img class="img-bandeira" src="assets/bandeira${i + 1}.png" alt="Posição ${i + 1}">
+                  <img class="img-campeao" src="assets/campeoes/${(respostaJSON[i].nomeCampeao).toLowerCase()}.jpg" alt="${(respostaJSON[i].nomeCampeao).toLowerCase()}">
+                </div>
+                <h3 class="titulo-campeao">${respostaJSON[i].nomeCampeao}</h3>
+                <div class="ranking-votos">
+                  <p>Votos</p>
+                  <p>${respostaJSON[i].votos}</p>
+                </div>
+              </div>
+        `
+            }
+            
+          })
+        }
+      })
   }
 
-  function votar(evento){
-    if(sessionStorage.getItem("FK_CAMPEAO")){
-      const divQueClicou = evento.currentTarget;
-      const idCampeao = divQueClicou.lastElementChild.innerHTML;
-      const idUsuario = sessionStorage.getItem("ID_USUARIO");
-    
-    fetch("/usuarios/votar", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        idCampeao: idCampeao,
-        idUsuario: idUsuario
-      })
-    }).then(function (resposta) {
-              console.log("resposta: ", resposta);
+  selecionarTop10()
 
-              if (resposta.ok) {
-                  setTimeout(() => {
-                      window.location = "ranking.html";
-                  }, "500")
-                  
-                  limparFormulario();
-                  finalizarAguardar();
-              } else {
-                  throw ("Houve um erro no .then");
-              }
-          }).catch(function (resposta) {
-              console.log(`#ERRO: ${resposta}`);
-
-          });
-    } else {
-      alert("Você já votou, e você só pode votar mais vez!")
-    }
-    
-  }  
-
-
-  
 
 </script>
