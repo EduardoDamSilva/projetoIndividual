@@ -31,3 +31,29 @@ function paralax(event){
   img.style.right = event.screenX * 0.025 + "px"
 }
 
+
+/* Animação site */
+function animacaoSite(){
+  const animacaoDivs = document.querySelectorAll('.js-scroll')
+  const metadeDaTela = window.innerHeight * 0.5
+  
+  
+
+  function animacaoScroll(evento){
+    animacaoDivs.forEach((animar) => {
+      const topoDaDiv = animar.getBoundingClientRect().top
+      const conteudoVisivel = (topoDaDiv - metadeDaTela) < 0;
+      console.log(animar)
+      if(conteudoVisivel){
+        animar.classList.add('animate')
+      }
+    })
+  }
+
+  animacaoScroll()
+  window.addEventListener('scroll', animacaoScroll)
+}
+animacaoSite()
+
+
+

@@ -9,8 +9,8 @@
   <title>Home</title>
 </head>
 <body>
-  <header class="header backgroundHeader">
-    <div class="grid-geral">
+  <header class="header backgroundHeader js-scroll">
+    <div class="grid-geral js-scrollShow" id="t200">
       <img class="logoHeader" src="assets/lol-logo.png" alt="Logo league of legends">
       <nav class="navegacao">
         <ul>
@@ -19,7 +19,6 @@
           <a href="#historia"><li class="linkPaginas">História</li></a>
           <a href="#licoes"><li class="linkPaginas">Lições</li></a>
           <a href="#canal"><li class="linkPaginas">Canal</li></a>
-          <a href=""><li class="lua"><img src="assets/Lua.png" alt="Lua"></li></a>
           <a href="login.html"><li class="linkIniciarSessao">Iniciar Sessão</li></a>
           <a href="cadastro.html"><li class="linkCadastrar">Cadastre-se</li></a>
         </ul>
@@ -27,28 +26,30 @@
     </div>
   </header>
 
-  <video class = "videoComBlur" playinline loop muted autoplay>
+  <div class="js-scroll">
+  <video class = "videoComBlur js-scrollShow" id="t200" playinline loop muted autoplay>
     <source src="assets/videoComBlur.webm" type="video/webm">
   </video>
 
-  <div class="divVideo">
-    <video class="videoSemBlur" playinline loop muted autoplay>
+  <div class="divVideo" >
+    <video class="videoSemBlur js-scrollShow" id="t600" playinline loop muted autoplay>
       <source src="assets/videoSemBlur.webm" type="video/webm">
     </video>
       <div class="divLeagueOfLegends">
-        <img class="imgLeagueOfLegends" src="assets/leagueOfLegends.png" alt="League Of Legends">
-        <button class="botao">Jogue de graça</button>
+        <img class="imgLeagueOfLegends js-scrollLeft" id="t1000" src="assets/leagueOfLegends.png" alt="League Of Legends">
+        <button class="botao js-scrollRight" id="t1000">Jogue de graça</button>
       </div>
   </div>
+</div>
 
   <main>
-    <div class="campeao" >
-      <span class="spanCampeao">Campeões</span>
-      <div class="grid-geral">
-        <h1 class="campeaoTitulo" id="campeao"><span>Escolha seu</span><br> Campeão</h1>
+    <div class="campeao js-scroll">
+      <span class="spanCampeao js-scrollTop" id="t600">Campeões</span>
+      <div class="grid-geral js-scroll">
+        <h1 class="campeaoTitulo js-scrollShow" id="campeao t600"><span>Escolha seu</span><br> Campeão</h1>
         <div class="flex">
-        <ul class="funcoes">
-          <li class="assasino ativo funcoes-js">
+        <ul class="funcoes js-scrollLeft" id="t400">
+          <li class="assasino ativo funcoes-js " id="t400">
             <svg style="width: 50px; fill: #bbb;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M56.59 73.71l1.67-2.88c5.75-9.34 5.51-16 3.83-20.59a39.78 39.78 0 01-9.1 16 2 2 0 01-1.43.48H48.2a2.17 2.17 0 01-1.67-.72 39.78 39.78 0 01-9.1-16c-1.68 4.55-1.68 11.26 3.83 20.59l1.68 2.88-3.36 5.75 10.06 17.72L59.7 79.22z"></path><path d="M73.11 38.74c-3.35-4.31-6-10-6-18.91 0-4.07-3.59-8.15-7.66-12-4.79-4.31-5.75-5.74-9.58-5.74s-4.79 1.43-9.34 5.74c-4.07 3.83-7.66 7.91-7.66 12 0 8.86-2.88 14.6-6 18.68L12.76 52.87 2.23 45.69v12.93S2.47 84 39.58 97.89c0 0-14.13-7.18-16.28-31.13-.24-1.67-.24-9.1-.24-10.29A119.77 119.77 0 0036.71 74c-.72-1.2-1.44-2.64-2.16-3.83-5-10.54-4.07-18.2-1.67-23.47a22.77 22.77 0 017.42-8.86l9.58 9.58 9.58-9.58a22.77 22.77 0 017.42 8.86c2.4 5.27 3.59 12.93-1.43 23.23-.72 1.38-1.45 2.58-2.16 4.07a119.77 119.77 0 0013.65-17.53c0 1.19 0 8.62-.24 10.29-2.39 23.95-16.28 31.13-16.28 31.13C97.53 84 97.77 58.62 97.77 58.62V45.69l-10.53 7.18z"></path></svg>
             <p>Assasino</p>
           </li>
@@ -76,8 +77,8 @@
             <p>Tanque</p>
           </li>
         </ul>
-        <ul>
-          <li class="imagensCampeao campeao-js">
+        <ul class="js-scrollRight" id="t200">
+          <li class="imagensCampeao campeao-js " >
             <img class="imagemAkali" src="assets/akali.png" alt="Akali">
             <div class="textoCampeao">
               <h3>Akali</h3>
@@ -124,48 +125,48 @@
       </div>
     </div>
 
-    <div class="comoJogar backgroundComoJogar" id="jogo">
+    <div class="comoJogar backgroundComoJogar js-scroll" id="jogo">
       <div class="grid-geral">
-        <img class="imgMapalol" src="assets/mapaLOL.png" alt="Mapa do LOL">
+        <img class="imgMapalol js-scrollLeft" id="t200" src="assets/mapaLOL.png" alt="Mapa do LOL">
         <div class="textoComoJogar">
-          <h1 class="comoJogarTitulo"><span>Como jogar</span><br> League</h1>
-          <p>O League Legends é um jogo MOBA de equipe 5v5, que você
+          <h1 class="comoJogarTitulo js-scrollRight" id="t400"><span>Como jogar</span><br> League</h1>
+          <p class="js-scrollRight" id="t600">O League Legends é um jogo MOBA de equipe 5v5, que você
             escolhe seu campeão limpa sua rota, mergulha em épicos confrontos 
             de equipe e tem que destruir o Nexus inimigo antes que destruam o seu.</p>
         </div>
       </div>
     </div>
 
-    <div class="minhaHistoria backgroundPreto" id="historia">
+    <div class="minhaHistoria backgroundPreto js-scroll" id="historia">
       <div class="grid-geral">
-        <h1 class="titulo" >Minha História</h1>
+        <h1 class="titulo js-scrollShow" id="t200">Minha História</h1>
         <div class="minhaHistoriaConteudo">
         <div class="minhaHistoriaTexto">
-          <h1>Quando comecei</h1>
-          <p>Jogo LOL(League Of Legends) desde os meus 12 anos, então ele acompanhou bastante da minha formação, como pessoa e meu jeito de enxegar o mundo, e logo quando comecei a jogar descobri o ranqueamento do jogo que me levou a querer melhorar e subir cada vez mais de ranking.</p>
+          <h1 class="js-scrollLeft" id="t200">Quando comecei</h1>
+          <p class="js-scrollLeft" id="t400">Jogo LOL(League Of Legends) desde os meus 12 anos, então ele acompanhou bastante da minha formação, como pessoa e meu jeito de enxegar o mundo, e logo quando comecei a jogar descobri o ranqueamento do jogo que me levou a querer melhorar e subir cada vez mais de ranking.</p>
         </div>
-          <img class="imgRanks" src="assets/elos.png" alt="Elos do League Of Legends">
+          <img class="imgRanks js-scrollRight" id="t600" src="assets/elos.png" alt="Elos do League Of Legends">
         </div>
       </div>
     </div>
 
-    <div class="licoes backgroundPretoLicoes">
+    <div class="licoes backgroundPretoLicoes js-scroll">
       <div class="grid-geral">
-        <h1 class="titulo" id="licoes">Lições Aprendidas</h1>
-        <div class="licoesConteudo">
-          <div class="licoesConteudoTexto">
+        <h1 class="titulo js-scrollLeft" id="licoes t200">Lições Aprendidas</h1>
+        <div class="licoesConteudo js-scrollBottom" >
+          <div class="licoesConteudoTexto js-scrollLeft" id="t200">
             <h2 class="subtitulo">Você não vai mudar o seu entorno</h2>
             <p>Depois de muito tempo jogando acabei percebendo algumas coisas que funcionavam no jogo e poderia ser transpostos para a vida real, como a lição de que muita das vezes você não vai mudar todo mundo e nem o mundo que está ao seu entorno, mas a pessoa que você pode mudar e que sempre está contigo é você mesmo, vendo os seus pontos negativos e a cada dia focando em um deles para o auto aperfeiçoamento, dispendendo assim energia em algo que vai te trazer muito mais resultados do que tentar mudar todos ao seu redor.</p>
           </div>
-          <div class="licoesConteudoTexto">
+          <div class="licoesConteudoTexto js-scrollRight" id="t400">
             <h2 class="subtitulo">A dificuldade de mudar</h2>
             <p>Como o LOL é um jogo onde tudo é tomada de decisão em um curto espaço de tempo você acaba treinando o seu cérebro a pensar de maneira muito rápida, mas pensando nisso você pode até tomar uma decisão rápido, só que para melhorar no LOL isso não importa, pois se for a decisão errada você nunca irá sair do lugar, com isso você precisa reeducar a sua memória muscular a tomar a decisão rápida e tomar a decisão certa, o que leva muito tempo para você tonar a decisão certa o seu novo automático, sem falar do esforço que será necessário.</p>
           </div>
-          <div class="licoesConteudoTexto">
+          <div class="licoesConteudoTexto js-scrollLeft" id="t600">
             <h2 class="subtitulo">Frustações</h2>
-            <p>Com o tempo jogando LOL (League Of Legends) e meus amigos acabamos jogando muitos campeonatos, e com isso perdendo muitas partidas que resultavam em conflitos e ao longo do tempo eu percebi que com essas experiências acabei aprendendo a lidar com a frustação de perder o jogo, mas o que hoje mais me frustra é saber que eu poderia fazer/jogar melhor do que eu apresentei.</p>
+            <p>Com o tempo jogando LOL (League Of Legends) eu e meus amigos acabamos jogando muitos campeonlicoesConteudoTextoatos, e com isso perdendo muitas partidas que resultavam em conflitos e ao longo do tempo eu percebi que com essas experiências acabei aprendendo a lidar com a frustação de perder o jogo, mas o que hoje mais me frustra é saber que eu poderia fazer/jogar melhor do que eu apresentei.</p>
           </div>
-          <div class="licoesConteudoTexto">
+          <div class="licoesConteudoTexto js-scrollRight" id="t800">
             <h2 class="subtitulo">Se estressar é sempre pior</h2>
             <p>Junto com a frustação vem o estresse que através do jogo e fora dele é nítido que com o estresse você acaba tomando piores decisões assim ficando mais estressado e se tornando uma bola de neve, então quando isso acontece é necessário olhar para si mesmo e perceber que se estressar só irá piorar a situação e olhar para o próximo passo invés dos erros anteriores.</p>
           </div>
@@ -173,17 +174,17 @@
       </div>
     </div>
 
-    <div class="canal backgroundAzul">
+    <div class="canal js-scroll backgroundAzul">
       <div class="grid-geral">
-        <h1 class="tituloCanal" id="canal">Meu canal</h1>
+        <h1 class="tituloCanal js-scrollShow" id="canal t200">Meu canal</h1>
         <div class="canalConteudo">
           <div class="canalConteudoTexto"> 
-            <h2 class="subtituloCanal">Blade1</h2>
-            <p>Depois de muito tempo jogando LOL acabei vendo que existia uma necessidade de um canal que ensinasse as outras pessoas a jogar, e como eu já sabia editar vídeos e edição de imagens comecei meu canal, e ensinei durante um tempo as pessoas a jogarem e mudarem a mentalidade para melhorar no jogo.</p>
-            <a target="_blank" href="https://www.youtube.com/channel/UC-hZx04wxpMh1uordFcri6w">Acessar Canal</a>
+            <h2 class="subtituloCanal js-scrollLeft" id="t400">Blade1</h2>
+            <p class="js-scrollLeft" id="t600">Depois de muito tempo jogando LOL acabei vendo que existia uma necessidade de um canal que ensinasse as outras pessoas a jogar, e como eu já sabia editar vídeos e edição de imagens comecei meu canal, e ensinei durante um tempo as pessoas a jogarem e mudarem a mentalidade para melhorar no jogo.</p>
+            <a class="js-scrollLeft" id="t600" target="_blank" href="https://www.youtube.com/channel/UC-hZx04wxpMh1uordFcri6w">Acessar Canal</a>
           </div>
           <div class="canalConteudoImgs">
-            <img src="assets/Thumbs.png" alt="">
+            <img class="js-scrollRight" id="t800" src="assets/Thumbs.png" alt="">
           </div>
         </div>
 

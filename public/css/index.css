@@ -84,6 +84,7 @@
   background-color: #404040;
   padding: 10px 15px;
   border-radius: 12px;
+  margin-left: 20px;
   margin-right: 20px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -481,6 +482,11 @@
 .licoesConteudoTexto{
   max-width: 45%;
   margin-bottom: 50px;
+
+}
+
+.licoes .grid-geral{
+  overflow: hidden !important;
 }
 
 /* Meu canal */

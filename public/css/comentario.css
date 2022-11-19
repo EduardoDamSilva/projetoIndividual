@@ -39,6 +39,7 @@
   padding: 10px 0;
   font-size: 1.5rem;
   border: 1px solid grey;
+  margin-bottom: 20px;
 }
 
 .addComentarioPreto{
@@ -58,8 +59,4 @@
   color: black;
   border: 1px solid black;
   cursor: pointer;
-}
-
-footer{
-  margin-top: 40px;
 }
