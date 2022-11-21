@@ -17,7 +17,8 @@
           <a href="ranking.html"><li class="linkPaginas">Ranking</li></a>
           <a href="./favorito.html"><li class="linkPaginas">Favorito</li></a>
           <a href="comentarios.html"><li class="linkPaginas">Comentários</li></a>
-          <a href="#"><li id="nomeUsuario" class="nomeUsuario">Blade1 <img src="assets/setinha-para-baixo.png" alt=""></li></a>
+          <li onclick="logout()" class="linkPaginas logout">Logout</li>
+          <a href="#"><li id="nomeUsuario" class="nomeUsuario">Blade1</li></a>
         </ul>
       </nav>
     </div>
@@ -61,9 +62,17 @@
 </body>
 </html>
 <script>
-  nomeUsuario.innerHTML = sessionStorage.getItem("NOME_USUARIO") + '<img src="assets/setinha-para-baixo.png" alt="">'
+  nomeUsuario.innerHTML = sessionStorage.getItem("NOME_USUARIO") + ""
 
-  
+  function logout(){
+    sessionStorage.EMAIL_USUARIO = null;
+    sessionStorage.NOME_USUARIO = null;
+    sessionStorage.ID_USUARIO = null;
+    sessionStorage.FK_COMENTARIO = null;
+    sessionStorage.FK_CAMPEAO = null;
+
+    location = "index.html"
+  }
 
 
   function adicionarCor(){

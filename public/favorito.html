@@ -17,11 +17,8 @@
           <a href="ranking.html"><li class="linkPaginas">Ranking</li></a>
           <a href="#"><li class="linkPaginas">Favorito</li></a>
           <a href="comentarios.html"><li class="linkPaginas">Comentários</li></a>
-          <li id="nomeUsuario" onclick="mostrarModal()" class="nomeUsuario">Blade1 <img src="assets/setinha-para-baixo.png" alt=""></li>
-          <div onclick="esconderModal()" id="nomeUsuario2" class="nomeUsuario2" style="display: none;">
-            <div>Blade1 <img src="assets/setinha-para-baixo.png" alt=""></div>
-            <div onclick="sair()" class="sair">Sair</div>
-          </div>
+          <li onclick="logout()" class="linkPaginas logout">Logout</li>
+          <a href="#"><li id="nomeUsuario" class="nomeUsuario">Blade1</li></a>
         </ul>
       </nav>
     </div>
@@ -66,16 +63,16 @@
 <script src="js/favorito.js"></script>
 <script>
 
-  nomeUsuario.innerHTML = sessionStorage.getItem("NOME_USUARIO") + '<img src="assets/setinha-para-baixo.png" alt="">'
+  nomeUsuario.innerHTML = sessionStorage.getItem("NOME_USUARIO") + ""
 
-  nomeUsuario2.innerHTML = '<div>' + sessionStorage.getItem("NOME_USUARIO") + '<img src="assets/setinha-para-baixo.png" alt=""> </div>' + '<div onclick="sair()" class="sair"><b>Sair</b></div>'
+  function logout(){
+    sessionStorage.EMAIL_USUARIO = null;
+    sessionStorage.NOME_USUARIO = null;
+    sessionStorage.ID_USUARIO = null;
+    sessionStorage.FK_COMENTARIO = null;
+    sessionStorage.FK_CAMPEAO = null;
 
-  function mostrarModal(){
-      nomeUsuario2.style.display = "flex"
-  }
-
-  function esconderModal(){
-    nomeUsuario2.style.display = "none"
+    location = "index.html"
   }
 
   function sair(){
