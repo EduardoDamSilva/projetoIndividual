@@ -107,6 +107,8 @@
           console.log("resposta: ", resposta);
 
               if (resposta.ok) {
+                
+                sessionStorage.FK_CAMPEAO = idCampeao;
                 setTimeout(() => {
                   window.location = "ranking.html";
                 }, "500")

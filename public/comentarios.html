@@ -88,7 +88,6 @@
 
 
     function comentar(){
-      console.log(sessionStorage.getItem("FK_COMENTARIO"))
       if(sessionStorage.getItem("FK_COMENTARIO") == 'null'){
         fetch("/usuarios/addComentario", {
           method: "POST",
@@ -129,6 +128,7 @@
     }).then(function(resposta){
         if(resposta.ok){
           console.log("Dados atualizados")
+          sessionStorage.FK_COMENTARIO = idUsuario;
           mostrarComentarios()
         }else{
           console.log("Erro ao atualizar dados")
