@@ -1,0 +1,104 @@
+Cumprimentar quem está na sala
+-Bom dia a todos, como vocês podem ver meu tema do projeto indiviudal é sobre 
+League Of Legends e eu sou o Eduardo Damaceno.
+
+-Passar o slide
+E bom o que é o League Of Legends ou LOL?
+O lol é um jogo multiplayer que são 5 jogadores contra 5 jogadores que se enfrentam
+em uma arena e quem destroir a base ou o nexus do time inimigo ganha o
+jogo, essa é explicação muito simples do que realmente é o LOL por que ele se assemelha
+bastante com um xadrez em vários pontos e tem muita complexidade envolvida.
+
+O LOL é um jogo muito famoso no mundo inteiro e como vocês sabem tem bastantes alunos
+que jogam aqui na faculdade, sendo atualmente o 6º jogo mais jogado do mundo
+- Passa o slide
+
+-Por que eu escolhi o lol?
+
+- Bom o lol participou bastante da minha formação como pessoa, por que jogo ele desde
+dos meu 12 anos, e desde de muito novo eu descobri o modo de ranquemento do jogo mais conhecido como elo
+e eu sempre quis melhorar para subir de elo e ficar melhor via os melhores jogares ou seja aqueles que tinham
+sucesso no jogo e acalçavam os melhores rankings e eu me inspirava neles e me perguntava
+como que eles chegaram lá, olhava como eles jogavam para melhorar o meu jogo, assistia vários deles para ver
+se existia algum padrão para melhorar e bom no fim consegui muitas respostas mas deixa para mais pra frente
+da apresentação agora vamos para o site.
+
+- dar Alt + Tab.
+
+Aqui a parte inicial é um vídeo em cima do outro para dar esse efeito de sobreposição e todo esse layout foi inspirado
+no site original deles que eu coloquei como desafio, para ver se eu conseguia fazer e consegui, mas pra baixo,
+vamos para um carrosel que eu acabei usar 2 for um para a imagem e outro para a função do personagem
+mostrando as funções dentro do jogo dos personagem.
+
+Aqui é mais sobre o LOL que eu já falei no ppt, a minha história, e aqui as minhas lições aprendidas depois de tanto
+tempo jogando, e eu gostaria de destacar aqui algumas lições importante que aprendi jogando, e uma delas é que você
+não mudará o seu entorno, por que como eu falei para vocês o lol é basicamente 5 conta 5 e quando você vai jogar
+você fica em um desses time e para você subir de ranque você tem que ganhar e no começo quando eu tinha 12 anos
+era o momento que eu mais ficava bravo com o jogo, por que eu achava que eu não subia de ranque por culpa do time 
+ou seja dos outros, mas o meu time sempre eram pessoas aleatórias que não se repetiam e adivinha quem era o jogador
+que sempre se repetia no time, isso mesmo, eu, então depois de muito tempo fui perceber isso e comecei a concentrar
+as minhas energias em mim e não falar que a culpa era do outro, por que se eu ficasse melhor não importa o que meu time 
+fizesse eu conseguiria ganhar o jogo, e essa é uma das lições mais importantes que eu aprendi jogando, e mesmo que eu
+perdesse eu olhava e tentava entender o que eu errei para eu melhorar, fazendo com que mesmo que eu perdesse ainda era
+uma vitória para a minha melhora.
+
+E bom depois de muito tempo consegui chegar em um ranking que apenas 2% nos jogares se mantem, e senti a necessidade
+de conteudo em portugues para ensinar as pessoas, por que aprendia bastante assistindo conteudo em inglês ai eu
+pensei em fazer um canal, que aqui embaixo faço mensão, mas vamos fazer o cadastro para mostrar mais do site
+
+- Ir para o cadastro
+
+Bom aqui tem o cadastro com validações, vou cadastrar algum professor que está na sala
+
+- Ir para o login 
+
+Como no cadastro aqui tambem tem validações
+
+Aqui dentro já logado eu coloquei uma interação para que o usuário vote no personagem que ele mais goste, mas só 
+para citar aqui tambem eu usei um for para criar todas essas divs ao invés de criar uma por uma deixando o código 
+muito grande, e pelo fato de existerem muitos personagens eu criei uma barra de pesquisa para que o usúario ache o
+seu personagem mais rápido, como por exemplo vou procurar o que eu ache que combine com o usuario
+
+Então quando ele clica da 2 updates no banco um para adicionar um voto ao personagem e outro na fk do usuário, por que
+na minha regra de negócio ele só pode votar uma vez ele vai para a página do ranking que da um select no banco
+aparecendo um top 10 dos personagens
+mais selecionados pelo usuarios, e tem tambem essa aba para que o usuário deve um feedback sobre o tendo uma relação de 1
+para 1 onde um usúario tem um comentário unico sobre o site
+
+E aqui em cima a opção de Logout para o usúario se deslogar do site
+
+-Voltar para o ppt
+
+Aprofundando mais nos valores eu aprendi que o foco é muito importante para conseguir o que você quer e junto com ele
+pelo fato de você escolher um caminho para a sua vida, você acaba deixando muitos outros que você não irá viver para trás,
+tendo sempre uma consequência por eu falo isso, por que para melhorar em algo você tem que deixar outrar para trás
+como no LOL é muito melhor você jogar com apenas um personagem para melhorar e melhorar com ele ao invés de jogar com o
+personagem que dá vontade jogar e muitas pessoas não estão dispostas a tomar essa decisão de deixar o luxo de jogar com
+vário personagens para jogar com apenas 1 para melhorar mesmo ela querendo subir de ranque no jogo
+
+Uma coisa que tambem pode acontecer no jogo é se estressar e quando se trata de ganhar conforme mais estressado você fica
+piores decisões você toma, e assim ficando mais estressado entrando em um loop infinito.
+
+E como o lol é um jogo de tomada de decissão muito rapida o que faz com que o seu cerébro não pense tanto no que faz
+e o que mais você usa para jogar é sua memória muscular, ou seja para você mudar uma decisão que você toma no jogo
+durante muito tempo jogando, demora muito para você reeducar o seu cerébro a tomar a decisão certa e não a outra que 
+você tomava antes.
+
+Bom a minha maior dificuldade foi a API por que eu não sabia mexer e começou a dar um erro que eu não sabia como
+concertava e o meu amigo Nathan do 3A me ajudou bastante o que foi muito legal pelo fato de eu ter recomendado a faculdade
+para ele por que eu já tinha um conhecimento prévio e quem no fim que me salvou foi ele.
+
+Então pessoal é isso, obrigado.
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
